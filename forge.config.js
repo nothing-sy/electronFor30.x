@@ -4,7 +4,7 @@ module.exports = {
   makers: [
         {
           "name": "@electron-forge/maker-zip"
-        },
+        },/*  */
         {
           name: '@electron-forge/maker-squirrel'/* ,
           config: {
@@ -12,7 +12,17 @@ module.exports = {
             certificatePassword: process.env.CERTIFICATE_PASSWORD
           } */
         }],
-  publishers: [],
+  publishers: [ {
+    name: '@electron-forge/publisher-github',
+    config: {
+      repository: {
+        owner: 'nothing-sy',
+        name: 'electronFor30.x'
+      },
+      prerelease: false,
+      draft: true
+    }
+  }],
   plugins: [],
   hooks: { /* ... */ },
   buildIdentifier: 'my-build'
