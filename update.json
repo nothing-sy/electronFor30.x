@@ -1,0 +1,15 @@
+{
+	"currentRelease": "2.0.0",
+	"releases": [
+		{
+			"version": "2.0.0",
+			"updateTo": {
+				"version": "2.0.0",
+				"pub_date": "2024-05-09T03:43:24Z",
+				"notes": "Theses are some release notes innit",
+				"name": "2.0.0",
+				"url": "https://192.168.1.30:8080/electron-2.0.0.Setup.exe"
+			}
+		}
+	]
+}

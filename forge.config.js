@@ -1,10 +1,8 @@
 module.exports = {
-  packagerConfig: { /* ... */ },
-  rebuildConfig: { /* ... */ },
   makers: [
-        {
+        /* {
           "name": "@electron-forge/maker-zip"
-        },/*  */
+        }, */
         {
           name: '@electron-forge/maker-squirrel'/* ,
           config: {
@@ -20,10 +18,17 @@ module.exports = {
         name: 'electronFor30.x'
       },
       prerelease: false,
-      draft: true
+      draft: true,
+      authToken: '' // 请填写你的github personal access token
     }
   }],
-  plugins: [],
-  hooks: { /* ... */ },
-  buildIdentifier: 'my-build'
-};
+  buildIdentifier: 'my-build',
+  hooks: {
+    prePackage: async (forgeConfig, appProcess) => {
+      console.log(`我在准备打包: ${appProcess}`);
+    },
+    preMake(){
+      console.log(`preMake----------`);
+    }
+}
+}
